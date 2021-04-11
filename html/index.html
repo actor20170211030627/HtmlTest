@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>引导界面</title>
+    <script>
+        function goHome() {
+            location.href = "1.基础.html";
+        }
+    </script>
+</head>
+
+<body>
+<ol type="1">
+    <li>
+        <a href="1.基础.html" target="_blank">基础(基础,ul无序,ol有序,a超链接,table表格,frameset框架结构)</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="2.黑马商城.html" target="_blank">用表格写的一个简单的 黑马商城</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="3.框架结构标签.html" target="_blank">frameset示例用法</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="4.表单标签说明.html" target="_blank">表单标签说明</a>&emsp;和&emsp;
+        <a href="4.1表单标签示例.html" target="_blank">表单标签示例</a>
+        <ol>
+            <li>&lt;input type="button"
+                <font color="red">onclick="点击事件"</font>/>
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <br/>
+
+    <li>
+        <a href="5.使用DIV和CSS布局.html" target="_blank">使用DIV+CSS布局</a>
+        <br/><font color="red">&lt;link rel="stylesheet" href="../css/test.css" type="text/css"/></font>外部引入CSS,这儿的type="text/css"是默认属性,可以不写
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="6.使用DIV_CSS完成首页重新布局.html" target="_blank">使用DIV+CSS完成首页重新布局</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <br/>
+
+    <li>
+        <a href="7.JavaScript脚本语言.html" target="_blank">JavaScript脚本语言</a> :能够让整个页面具有动态效果
+        <ol>
+            <li><font color="red">&lt;script type="text/javascript" src="../js/jquery-1.8.3.js" >&lt;/script></font>外部引入JS
+            </li>
+            <li><font color="red">var element = document.getElementById(“id 名称”);</font>★★注意:这个方法只能在函数内赋值,不能在函数外赋值,否则无效★★
+            </li>
+            <li><font color="red">&lt;form onsubmit="return checkForm()"></font>表单提交必须返回一个boolean值</li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.1使用JS完成表单的校验并控制提交(alert方式).html" target="_blank">使用JS完成表单的校验并控制提交(alert方式)</a>:&lt;form
+        onsubmit="return checkForm()">
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.2使用JS完成首页自动轮播图.html" target="_blank">使用JS完成首页自动轮播图</a>:
+        <font color="red">&lt;body onload="init()"></font> 或者在JS里写
+        <font color="red">window.onload = function(){}</font>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.3使用JS完成页面定时弹出广告.html" target="_blank">使用JS完成页面定时弹出广告</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.4确认弹出框&输入弹出框.html" target="_blank">确认弹出框&amp;输入弹出框</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <font color="red">history.back();</font>//上一页&emsp;
+        <font color="red">history.forword();</font>//下一页&emsp;
+        <font color="red">history.go(-2);</font>返回上上一页(正数是下n页)
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>location对象:是window对象的一部分,可通过window.location属性来访问.<input type="button"
+                                                                value="JS代码:location.href=&quot;1.基础.html&quot;"
+                                                                onclick="goHome()"/>
+        <br/>或者直接在&lt;input>里面写:<input type="button" onclick="javascript:location.href='1.基础.html'"
+                                       value="&lt;input type=&quot;button&quot; onclick=&quot;javascript:location.href='1.基础.html'&quot;/>"/>
+        <font color="red">这种把JS代码直接写在标签内的方式不推荐.</font>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.5使用JS完成表单的校验并控制提交(右侧提示方式).html" target="_blank">使用JS完成表单的校验并控制提交(右侧提示方式)</a>
+        <ol>
+            <li>
+                <font color="red">onfocus</font>:获取焦点事件
+            </li>
+            <li>
+                <font color="red">onblur</font>:失去焦点事件
+            </li>
+            <li>&lt;input type="text" name="username" id="username" placeholder="请输入用户名"
+                onfocus="showTips('usernamespan', '请输入用户名')" onblur="checkTips('username', 'usernamespan','用户名不能为空!')">&lt;/input>
+                &lt;span id="usernamespan">&lt;/span>
+            </li>
+            <li>JS代码:
+                <br/>&lt;script>
+                <br/>&emsp;function showTips(spanId, tips){
+                <br/>&emsp;&emsp;document.getElementById(spanId).innerHTML="&lt;font color='gray'>"+tips+"&lt;/font>";
+                <br/>&emsp;}
+                <br/>
+                <br/>&emsp;function checkTips(id, spanId, errTip){
+                <br/>&emsp;&emsp;var elem = document.getElementById(id).value;
+                <br/>&emsp;&emsp;if(elem == ""){
+                <br/>&emsp;&emsp;&emsp;document.getElementById(spanId).innerHTML="&lt;font color='red'>"+errTip+"&lt;/font>";
+                <br/>&emsp;&emsp;} else {
+                <br/>&emsp;&emsp;&emsp;document.getElementById(spanId).innerHTML="";
+                <br/>&emsp;&emsp;}
+                <br/>&emsp;}
+                <br/>&lt;/script>
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <br/>
+
+    <li>
+        <a href="7.6表格隔行换色.html" target="_blank">表格隔行换色</a>
+        <ol>
+            <li>
+                <font color="red">&lt;thead></font>:表头标签
+                <br/>&emsp;&lt;tr>
+                <br/>&emsp;&emsp;
+                <font color="red">&lt;th></font>&lt;/th>:居中,加粗(可以不写在&lt;thead>里面)
+                <br/>&emsp;&lt;/tr>
+                <br/>&lt;/thead>
+            </li>
+
+            <li>
+                <font color="red">&lt;tbody></font>:一个table里面&lt;tbody>不止一个!
+                <br/>&emsp;&lt;tr>
+                <br/>&emsp;&emsp;&lt;td>&lt;/td>
+                <br/>&emsp;&lt;/tr>
+                <br/>&lt;/tbody>
+            </li>
+
+            <li>
+                <font color="red">var len = table.tBodies[0].rows.length;</font>&emsp;获取table的第一个tbody的行数.
+                <br/>
+                <font color="red">table.tBodies[0].rows[i].style.backgroundColor="pink";</font>&emsp;给第i行设置背景颜色.
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.7表格高亮显示.html" target="_blank">表格高亮显示</a>
+        <ol>
+            <li>给元素设置
+                <font color="red">onmouseover</font>事件:鼠标移动到这一行
+            </li>
+            <li>给元素设置
+                <font color="red">onmouseout</font>事件:鼠标离开这一行
+            </li>
+            <li>&lt;tr
+                <font color="red">onmouseover="setBackgroundColor('tr1',true)"</font>
+                <font color="red">onmouseout="setBackgroundColor('tr1',false)"</font> id="tr1">
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>事件(离线手册搜索:dom_obj_event.asp)
+        <br/><img width="50%" src="../imgCustom/event1.png"/></li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.8复选框的全选和全不选.html" target="_blank">checkbox复选框的全选/全不选</a>
+        <ol>
+            <li>var checked = document.getElementById("checkAll")
+                <font color="red">.checked;</font>&emsp;获取顶部复选框的选中状态
+            </li>
+            <li>var checkBoxs = document
+                <font color="red">.getElementsByName</font>("checkBox");&emsp;获取下面所有的复选框
+            </li>
+            <li>checkBoxs[i].checked=checked;&emsp;遍历并赋值</li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>Document 对象方法(离线手册搜索:dom_obj_document.asp)
+        <br/><img src="../imgCustom/documentMtehod.png"/>
+        <br/>以下2个方法很重要,但是在手册中查不到:
+        <ol>
+            <li>
+                <font color="red">document.createTextNode()</font>&emsp;创建文本节点
+            </li>
+            <li>
+                <font color="red">document.createElement()</font>&emsp;创建元素节点
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <br/>
+
+    <li>
+        <a href="7.9Element属性和方法.html" target="_blank">Element 属性和方法</a>(离线手册搜索:dom_obj_all.asp)
+        <br/>下面列出常用方法:
+        <ol>
+            <li>
+                <font color="red">element.appendChild()</font>&emsp;向元素添加新的子节点，作为最后一个子节点。
+            </li>
+            <li>
+                <font color="red">element.firstChild</font>&emsp;&emsp;&emsp;返回元素的首个子(节点Node)。
+            </li>
+            <li>
+                <font color="red">element.getAttribute()</font>&emsp;返回元素节点的指定属性值。
+            </li>
+            <li>
+                <font color="red">element.innerHTML</font>&emsp;&emsp;设置或返回元素的内容。
+            </li>
+            <li>
+                <font color="red">element.insertBefore()</font>&emsp;在指定的已有的子节点之前插入新节点。
+            </li>
+            <li>
+                <font color="red">element.lastChild</font>&emsp;&emsp;&emsp;返回元素的最后一个子元素。
+            </li>
+            <li>
+                <font color="red">element.setAttribute()</font>&emsp;把指定属性设置或更改为指定值。
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>Attribute 属性和方法
+        <br/><img src="../imgCustom/attribute属性和方法.png"/></li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.10动态添加城市.html" target="_blank">动态添加城市</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="7.11使用JS完成省市二级联动.html" target="_blank">使用JS完成省市二级联动</a>
+        <ol>
+            <li>本例用到了onchange事件:<font color="red">&lt;select id="select1" onchange="changeCity(this.value)"></font>这儿的value是select1中option的value值
+            </li>
+            <li>本例是用二维数组完成的:var citys = new Array();
+                <br/>citys[0] = new Array("武汉市","黄冈市","襄阳市","荆州市");
+                <br/>...
+            </li>
+            <li><font color="red">select2.options.length = 0;</font>//每次给第二个下拉列表添加数据之前清空数据.
+                <br/><font color="red">select2.innerHTML = "";</font>&emsp;//这样也可以清除第二个下拉列表的数据
+                <br/><font color="red">select2.remove();</font>&emsp;&emsp;&emsp;&emsp;//直接把select2移除了
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <br/>
+
+    <li>
+        <a href="8.JQuery说明.html" target="_blank">JQuery说明</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="9.JQuery入门.html" target="_blank">JQuery入门</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="10.JQ页面加载与JS页面加载区别.html" target="_blank">JQ页面加载与JS页面加载区别</a>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="11.JS与JQ转换.html" target="_blank">JS与JQ转换</a>
+        <ol>
+            <li>JQ 转 JS
+                <br/>$("#span_banzhang").<font color="red">get(0).innerHtml</font> = "美美哒!";
+                <br/>$("#span_banzhang")<font color="red">[0].innerHtml</font> = "棒棒哒!";
+                /li>
+            <li>JS 转 JQ
+                <br/>var spanElement = document.getElementById("span_banzhang");
+                   <br/>$(<font color="red">spanElement</font>).<font color="red">html</font>("思密达!");
+            </li>
+        </ol>
+
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="12.使用JQ完成页面定时弹出广告.html" target="_blank">使用JQ完成页面定时弹出广告</a>
+        <ol>
+            <li>element.<font color="red">show()</font>;//立即显示出来</li>
+            <li>element.<font color="red">show(1000)</font>;//"slow","normal","fast",或自定义毫秒值</li>
+            <li></li>
+            <li>element.<font color="red">hide()</font>;//立即隐藏</li>
+            <li>element.<font color="red">hide(1000)</font>;//"slow","normal","fast",或自定义毫秒值</li>
+            <li></li>
+            <li>element.<font color="red">toggle(2000)</font>;//显示/隐藏切换."slow","normal","fast",true,false,或自定义毫秒值</li>
+            <br/>
+            <li>element.<font color="red">slideDown(3000)</font>;//滑动显示,"slow","normal","fast",或自定义毫秒值</li>
+            <li>element.<font color="red">slideUp(3000)</font>;//滑动隐藏,"slow","normal","fast",或自定义毫秒值</li>
+            <li>element.<font color="red">slideToggle(3000)</font>;//滑动切换显示/隐藏,"slow","normal","fast",或自定义毫秒值</li>
+            <br/>
+            <li>element.<font color="red">fadeIn(2000)</font>;//淡入,"slow","normal","fast",或自定义毫秒值</li>
+            <li>element.<font color="red">fadeOut(2000)</font>;//淡出,"slow","normal","fast",或自定义毫秒值</li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="13.JQ基本选择器.html" target="_blank">JQ基本选择器</a>
+        <ol>
+            <li><font color="red">$("#one").css("background-color","pink")</font>;&emsp;//1.id选择器,设置背景颜色</li>
+            <li><font color="red">$(".mini")</font>.css("background-color","pink");&emsp;//2.类选择器</li>
+            <li><font color="red">$("div")</font>.css("background-color","pink");&emsp;//3.元素选择器</li>
+            <li><font color="red">$("*")</font>.css("background-color","pink");&emsp;//4.所有元素选择器</li>
+            <li><font color="red">$("#two,.mini")</font>.css("background-color","pink");&emsp;//5.或者选择器</li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="14.JQ层级选择器.html" target="_blank">JQ层级选择器</a>
+        <ol>
+            <li><font color="red">$("body div")</font>.css("background-color","gold");&emsp;//1.body内所有叫div的(<font
+                    color="red">儿子/孙子</font>)...
+            </li>
+            <li><font color="red">$("body>div")</font>.css("background-color","gold");&emsp;//body内所有的div(<font
+                    color="red">儿子</font>)
+            </li>
+            <li><font color="red">$("#two+div")</font>.css("background-color","gold");&emsp;//id为two的下一个同层级叫div的元素(<font
+                    color="red">同桌</font>)
+            </li>
+            <li><font color="red">$("#one~div")</font>.css("background-color","gold");&emsp;//id为one的所有同层级叫div的元素(<font
+                    color="red">兄弟</font>)
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="15.JQ基本过滤选择器.html" target="_blank">JQ基本过滤选择器</a>
+        <table>
+            <thead>
+            <th>基本</th>
+            <th>描述</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>$("body div<font color="red">:first()</font>").css("background-color","red");</td>
+                <td>body中的第一个div元素,或者直接调用:<font color="red">$('li').first();</font>&emsp;只匹配一个子元素,:first-child
+                    每个父元素匹配一个子元素
+                </td>
+            </tr>
+            <tr>
+                <td>$("body div<font color="red">:last()</font>").css("background-color","red");</td>
+                <td>body中的最后一个div元素,或者直接调用:<font color="red">$('li').last();</font></td>
+            </tr>
+            <tr>
+                <td>$("input<font color="red">:not</font>(:checked)");</td>
+                <td>input中未选中的元素</td>
+            </tr>
+            </tbody>
+        </table>
+        <img src="../imgCustom/JQ基本过滤选择器.png"/>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="16.JQ属性选择器.html" target="_blank">JQ属性选择器</a>
+        <table>
+            <thead>
+            <th>属性选择器</th>
+            <th>描述</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td><font color="red">$("div[id]")</font>.css("background-color","red");</td>
+                <td>选择有id属性的div</td>
+            </tr>
+            <tr>
+                <td><font color="red">$("div[id='two']")</font>.css("background-color","red");</td>
+                <td>选择有id属性的值为two的div</td>
+            </tr>
+            </tbody>
+        </table>
+        <img src="../imgCustom/JQ属性选择器.png"/>
+        <ul>
+            <li>含有某个属性</li>
+            <li>= 属性等于某个值</li>
+            <li>!= 匹配所有不含有指定的属性，或者属性不等于特定值的元素</li>
+            <li>^= 匹配给定的属性是以某些值开始的元素</li>
+            <li>$= 匹配给定的属性是以某些值结尾的元素</li>
+            <li>*= 匹配给定的属性是以包含某些值的元素</li>
+            <li>复合属性选择器，需要同时满足多个条件时使用,示例:$("input[id][name$='man']")&emsp;解释:找到所有含有 id 属性，并且它的 name 属性是以 man 结尾的</li>
+        </ul>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>JQ 子元素 选择器(每个父元素匹配一个子元素)
+        <br/><img src="../imgCustom/JQ子元素选择器.png"/>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="17.JQ表单选择器.html" target="_blank">JQ表单选择器</a>
+        <br/><img src="../imgCustom/JQ表单选择器.png"/>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="18.使用jQ选择器完成表格隔行变色.html" target="_blank">使用jQ"选择器"完成表格隔行变色</a>
+        <ol>
+            <li>使用JQ过滤器原生写法:</li>
+            <ol>
+                <li>$("tbody tr:even").css("background-color","yellow");&emsp;//偶数行</li>
+                <li>$("tbody tr:odd").css("background-color","green");&emsp;//奇数行</li>
+            </ol>
+            <li>使用 美工妹纸 写的 CSS</li>
+            <ol>
+                <li>$("tbody tr:even").<font color="red">addClass</font>("even");&emsp;//偶数行</li>
+                <li>//$("tbody tr:even").<font color="red">removeClass</font>("even");&emsp;//偶数行移除class</li>
+                <li>$("tbody tr:odd").<font color="red">addClass</font>("odd");&emsp;//奇数行</li>
+            </ol>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="19.使用jQ选择器完成复选框的全选和全不选.html" target="_blank">使用jQ选择器完成复选框的全选和全不选</a>
+        <ol>
+            <li>//$("tbody input").<font color="red">attr</font>("checked",this.checked);&emsp;//attr方法与JQ的版本有关，在1.8.3及以下有效。
+            </li>
+            <li>$("tbody input").<font color="red">prop</font>("checked",this.checked);</li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="20.使用jQ选择器完成省市二级联动.html" target="_blank">使用jQ选择器完成省市二级联动</a>
+        <ol>
+            <li>$("#province").<font color="red">change</font>(function(){</li>
+            <li>&emsp;$("#city").<font color="red">empty()</font>; //10.清除第二个下拉列表的内容</li>
+            <li>&emsp;var val = <font color="red">this.value</font>; //1.获取用户选择的省份</li>
+            <li>&emsp;<font color="red">$.each(cities,function(i,n)</font>{//3.遍历二维数组中的省份</li>
+            <li>&emsp;&emsp;if(val==i){</li>
+            <li>&emsp;&emsp;&emsp;<font color="red">$.each(cities[i], function(j,m)</font> {//5.遍历该省份下的所有城市</li>
+            <li>&emsp;&emsp;&emsp;&emsp;var textNode = document.createTextNode(m);//6.创建城市文本节点</li>
+            <li>&emsp;&emsp;&emsp;&emsp;var opEle = document.createElement("option");//7.创建option元素节点</li>
+            <li>&emsp;&emsp;&emsp;&emsp;<font color="red">$(opEle)</font>.<font color="red">append</font>(textNode);//8.将城市文本节点添加到option元素节点中去
+            </li>
+            <li>&emsp;&emsp;&emsp;&emsp;$(opEle).<font color="red">appendTo</font>($("#city"));//9.将option元素节点追加到第二个下拉列表中去
+            </li>
+            <li>&emsp;&emsp;&emsp;&emsp;$(opEle).<font color="red">prependTo</font>($("#city"));//10.将option元素追加到第二个下例列表的<font
+                    color="red">第一个位置</font></li>
+            <li>&emsp;&emsp;&emsp;});</li>
+            <li>&emsp;&emsp;}</li>
+            <li>&emsp;});</li>
+            <li>});</li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="21.使用jQ选择器完成下拉列表左右选择.html" target="_blank">使用jQ选择器完成下拉列表左右选择(<font color="red">双击有bug</font>)</a>
+        <br/><img src="../imgCustom/下拉列表左右选择.png" width="500px"/>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        <a href="22.validate入门案例.html" target="_blank">validate入门案例</a>
+        <ol>
+            <li>validate 是 JQuery插件,及必须在JQuery的基础上进行运行.我们将导入JQuery库,validate库,和国际化资源库(可选)</li>
+            <li><img src="../imgCustom/jquery.validate.png" width="600px"/></li>
+            <li><img src="../imgCustom/jquery.validate2.png" width="600px"/></li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="23.使用jQ选择器完成注册页面表单校验.html" target="_blank">使用jQ选择器完成注册页面表单校验</a></li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        总结:
+        <ol>
+            <li>jQuery属性操作
+                <ol>
+                    <li><a href="24.1属性attr操作.html" target="_blank">属性attr操作</a></li>
+                    <li><a href="24.2CSS类操作.html" target="_blank">CSS类操作</a></li>
+                    <li><a href="24.3HTML代码操作.html" target="_blank">HTML代码操作</a></li>
+                    <li><a href="24.4文本text操作.html" target="_blank">文本text操作</a></li>
+                    <li><a href="24.5值val操作.html" target="_blank">值val操作</a></li>
+                </ol>
+            </li>
+            <li>jQuery文档处理
+                <ol>
+                    <li><a href="25.1插入操作.html" target="_blank">插入操作</a></li>
+                    <li><a href="25.2复制操作.html" target="_blank">复制操作</a></li>
+                    <li><a href="25.3替换操作.html" target="_blank">替换操作</a></li>
+                    <li><a href="25.4删除操作.html" target="_blank">删除操作</a></li>
+                    <li><a href="25.5删除相关操作的区别.html" target="_blank">删除相关操作的区别</a></li>
+                </ol>
+            </li>
+            <li>jQuery遍历操作
+                <ol>
+                    <li><a href="26.1_each(callback).html" target="_blank">_each(callback)</a></li>
+                    <li><a href="26.2_$.each().html" target="_blank">_$.each()</a></li>
+                </ol>
+            </li>
+            <li>jQuery的CSS操作
+                <ol>
+                    <li><a href="27.1CSS操作.html" target="_blank">CSS操作</a></li>
+                </ol>
+            </li>
+            <li>jQuery事件
+                <ol>
+                    <li>问题抛出
+                        <ol>
+                            <li><a href="28.1.1页面未加载执行失败.html" target="_blank">页面未加载执行失败</a></li>
+                            <li><a href="28.1.2解决办法.html" target="_blank">解决办法</a></li>
+                        </ol>
+                    </li>
+                    <li>事件绑定
+                        <ol>
+                            <li><a href="28.2.1点击展开.html" target="_blank">点击展开</a></li>
+                            <li><a href="28.2.2鼠标滑过.html" target="_blank">鼠标滑过</a></li>
+                        </ol>
+                    </li>
+                    <li>移除事件
+                        <ol>
+                            <li><a href="28.3.1事件移除.html" target="_blank">事件移除</a></li>
+                        </ol>
+                    </li>
+                    <li>合成事件
+                        <ol>
+                            <li><a href="28.4.1合成事件hover.html" target="_blank">合成事件hover</a></li>
+                            <li><a href="28.4.2合成事件toggle.html" target="_blank">合成事件toggle</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li>
+        BootStrap 引导程序，辅助程序&emsp;<a href="29.BootStrap入门.html" target="_blank">BootStrap入门</a>
+        <ol>
+            <li>来自 Twitter，是目前很受欢迎的前端框架。</li>
+            <li>Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</li>
+            <li>是一个CSS/HTML框架。</li>
+            <li>Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。</li>
+            <li>国内一些移动开发者较为熟悉的框架，如<a href="http://www.wex5.com/wex5/" target="_blank">WeX5</a>前端开源框架等，也是基于Bootstrap源码进行性能优化而来。
+            </li>
+            <li><a href="29.1BootStrap基本模板.html" target="_blank">BootStrap基本模板</a></li>
+            <li><a href="29.2BootStrap完整模板.html" target="_blank">BootStrap完整模板</a></li>
+        </ol>
+    </li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="30.BootStrap介绍.html" target="_blank">BootStrap介绍</a></li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="https://v3.bootcss.com/css/" target="_blank">全局 CSS 样式 · Bootstrap v3 中文文档</a></li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="https://v3.bootcss.com/components/" target="_blank">组件 · Bootstrap v3 中文文档</a></li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="https://v3.bootcss.com/javascript/" target="_blank">JavaScript 插件 · Bootstrap v3 中文文档</a>(轮播图)</li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="https://v3.bootcss.com/customize/" target="_blank">定制并下载 Bootstrap · Bootstrap v3 中文文档</a>(可以定制自己需要的样式)</li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="http://www.youzhan.org/" target="_blank">Bootstrap 优站精选</a>(许多已经写好的网站)</li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+
+    <li><a href="31.用BootStrap重写商城首页.html" target="_blank">用BootStrap重写商城首页</a></li>
+
+    <hr size="1"/>
+    <!--------------------------------------------------------1-------------------------------------------------------->
+</ol>
+</body>
+
+</html>

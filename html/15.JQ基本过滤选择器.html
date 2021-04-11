@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>15.JQ基本过滤选择器</title>
+		<link rel="stylesheet" href="../css/style.css" type="text/css"/>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		<script>
+			$(function(){
+				$("#btn1").click(function(){
+					$("body div:first").css("background-color","red");
+				});
+				
+				$("#btn2").click(function(){
+					$("body div:last").css("background-color","red");
+				});
+				
+				$("#btn3").click(function(){
+					$("body div:odd").css("background-color","red");
+				});
+				
+				$("#btn4").click(function(){
+					$("body div:even").css("background-color","red");
+				});
+			});
+		</script>
+		
+		
+	</head>
+	<body>
+		<input type="button" id="btn1" value="body中的第一个div元素($(&quot;body div:first&quot;))"/>
+		<input type="button" id="btn2" value="body中的最后一个div元素($(&quot;body div:last&quot;))"/>
+		<input type="button" id="btn3" value="选择body中的奇数的div($(&quot;body div:odd&quot;))"/>
+		<input type="button" id="btn4" value="选择body中的偶数的div($(&quot;body div:even&quot;))"/>
+		
+		<hr/>
+		<div id="one">
+			<div class="mini">
+				111
+			</div>
+		</div>
+		
+		<div id="two">
+			<div class="mini">
+				222
+			</div>
+			<div class="mini">
+				333
+			</div>
+		</div>
+		
+		<div id="three">
+			<div class="mini">
+				444
+			</div>
+			<div class="mini">
+				555
+			</div>
+			<div class="mini">
+				666
+			</div>
+		</div>
+		
+		<span id="four">
+			
+		</span>
+		
+		<br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<font color="black" size="4px">
+			&lt;script>
+				<br />&emsp;$(function(){
+					<br />&emsp;&emsp;$("#btn1").click(function(){
+						<br />&emsp;&emsp;&emsp;$("body div:first").css("background-color","red");
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;$("#btn2").click(function(){
+						<br />&emsp;&emsp;&emsp;$("body div:last").css("background-color","red");
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;$("#btn3").click(function(){
+						<br />&emsp;&emsp;&emsp;$("body div:odd").css("background-color","red");
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;$("#btn4").click(function(){
+						<br />&emsp;&emsp;&emsp;$("body div:even").css("background-color","red");
+					<br />&emsp;&emsp;});
+				<br />&emsp;});
+			<br />&lt;/script>
+		</font>
+	</body>
+</html>

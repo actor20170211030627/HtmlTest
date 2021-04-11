@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>7.4确认弹出框&amp;输入弹出框</title>
+		
+		<script>
+			function dialog1(){
+				confirm("确认删除吗?");
+			}
+			
+			function dialog2(){
+				prompt("请输入删除的理由!");
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="confirm();确认弹出框" onclick="dialog1()"/>
+		<input type="button" value="prompt();确认输入框" onclick="dialog2()"/>
+	</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>12.使用JQ完成页面定时弹出广告</title>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		
+		<style type="text/css">
+			font {
+				color: red;
+			}
+		</style>
+		
+		<script>
+			$(function(){
+				showAdId = setInterval("showAd()",1000);
+				showByDownId = setInterval("showByDown()",1000);
+				fadeInId = setInterval("showFadeIn()",1000);
+				toggleId = setInterval("startToggle()",1000);
+			});
+			
+			function showAd(){
+				//$("#img1").show();//立即显示出来
+				$("#img1").show(1000);//"slow","normal","fast",或自定义毫秒值
+				//clearInterval(showAdId);//不清除会周期性显示
+				hideAdId = setInterval("hideAd()",1000);
+			}
+			
+			function hideAd(){
+				//$("#img1").hide();//立即隐藏
+				$("#img1").hide(1000);
+				//clearInterval(hideAdId);
+			}
+			
+			//下滑显示
+			function showByDown(){
+				$("#img2").slideDown(3000);
+				//clearInterval(showByDownId);
+				hideByUpId = setInterval("hideByUP()",1000);
+			}
+			
+			//上滑隐藏
+			function hideByUP(){
+				$("#img2").slideUp(3000);
+				//clearInterval(hideByUpId);
+			}
+			
+			//淡入淡出
+			function showFadeIn(){
+				$("#img3").fadeIn(2000);
+				//clearInterval(fadeInId);
+				fadeOutId = setInterval("hideFadeOut()",1000);
+			}
+			
+			function hideFadeOut(){
+				$("#img3").fadeOut(2000);
+				//clearInterval(fadeOutId);
+			}
+			
+			//toggle的使用
+			function startToggle(){
+				$("#img4").toggle(2000);
+				//clearInterval(toggleId);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			&lt;script>
+				<br />&emsp;$(function(){
+					<br />&emsp;&emsp;showAdId = setInterval("showAd()",1000);
+					<br />&emsp;&emsp;showByDownId = setInterval("showByDown()",1000);
+					<br />&emsp;&emsp;fadeInId = setInterval("showFadeIn()",1000);
+					<br />&emsp;&emsp;toggleId = setInterval("startToggle()",1000);
+				<br />&emsp;});
+				<br />
+				<br />&emsp;function showAd(){
+					<br />&emsp;&emsp;//$("#img1").<font>show()</font>;&emsp;&emsp;&emsp;&emsp;//立即显示出来
+					<br />&emsp;&emsp;$("#img1").<font>show(1000)</font>;&emsp;&emsp;//<font>"slow"</font>,<font>"normal"</font>,<font>"fast"</font>,或自定义毫秒值
+					<br />&emsp;&emsp;//clearInterval(showAdId);&emsp;//不清除会周期性显示
+					<br />&emsp;&emsp;hideAdId = setInterval("hideAd()",1000);
+				<br />&emsp;}
+				<br />
+				<br />&emsp;function hideAd(){
+					<br />&emsp;&emsp;//$("#img1").<font>hide()</font>;&emsp;&emsp;&emsp;&emsp;//立即隐藏
+					<br />&emsp;&emsp;$("#img1").<font>hide(1000)</font>;&emsp;&emsp;//<font>"slow"</font>,<font>"normal"</font>,<font>"fast"</font>,或自定义毫秒值
+					<br />&emsp;&emsp;//clearInterval(hideAdId);
+				<br />&emsp;}
+			<br />&lt;/script>
+		</div>
+		<div>
+			<!--刚开始隐藏-->
+			<img width="50%" id="img1" style="display: none;" src="../img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg"/>
+		</div>
+		<div>
+			<font style="background-color: antiquewhite; width: 100%; height: 100%;">上面是广告,从这儿开始是正式内容</font>
+		</div>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+			
+		<div>
+			&lt;script>
+				<br />&emsp;$(function(){
+					<br />&emsp;&emsp;//下滑显示
+					<br />&emsp;&emsp;function showByDown(){
+						<br />&emsp;&emsp;&emsp;$("#img2").<font>slideDown(3000)</font>;
+						<br />&emsp;&emsp;&emsp;//clearInterval(showByDownId);
+						<br />&emsp;&emsp;&emsp;hideByUpId = setInterval("hideByUP()",1000);
+					<br />&emsp;&emsp;}
+					<br />
+					<br />&emsp;&emsp;//上滑隐藏
+					<br />&emsp;&emsp;function hideByUP(){
+						<br />&emsp;&emsp;&emsp;$("#img2").<font>slideUp(3000)</font>;
+						<br />&emsp;&emsp;&emsp;//clearInterval(hideByUpId);
+					<br />&emsp;&emsp;}
+				<br />&emsp;}
+			<br />&lt;/script>
+		</div>
+		<!--滑动-->
+		<div>
+			<img width="50%" id="img2" src="../img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg"/>
+		</div>
+		<div>
+			<font style="background-color: antiquewhite; width: 100%; height: 100%;">上面是广告,从这儿开始是正式内容</font>
+		</div>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+		
+		<div>
+			&lt;script>
+				<br />&emsp;$(function(){
+					<br />&emsp;&emsp;//淡入淡出
+					<br />&emsp;&emsp;function showFadeIn(){
+						<br />&emsp;&emsp;&emsp;$("#img3").<font>fadeIn(2000)</font>;
+						<br />&emsp;&emsp;&emsp;//clearInterval(fadeInId);
+						<br />&emsp;&emsp;&emsp;fadeOutId = setInterval("hideFadeOut()",1000);
+					<br />&emsp;&emsp;}
+					<br />
+					<br />&emsp;&emsp;function hideFadeOut(){
+						<br />&emsp;&emsp;&emsp;$("#img3").<font>fadeOut(2000)</font>;
+						<br />&emsp;&emsp;&emsp;//clearInterval(fadeOutId);
+					<br />&emsp;&emsp;}
+				<br />&emsp;}
+			<br />&lt;/script>
+		</div>
+		<!--淡入淡出-->
+		<div>
+			<img width="50%" id="img3" src="../img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg"/>
+		</div>
+		<div>
+			<font style="background-color: antiquewhite; width: 100%; height: 100%;">上面是广告,从这儿开始是正式内容</font>
+		</div>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+		
+		<div>
+			&lt;script>
+				<br />&emsp;$(function(){
+					<br />&emsp;&emsp;//toggle的使用
+					<br />&emsp;&emsp;function startToggle(){
+						<br />&emsp;&emsp;&emsp;$("#img4").<font>toggle(2000)</font>;
+						<br />&emsp;&emsp;&emsp;//clearInterval(toggleId);
+					<br />&emsp;&emsp;}
+				<br />&emsp;}
+			<br />&lt;/script>
+		</div>
+		<!--toggle的使用-->
+		<div>
+			<img width="50%" id="img4" src="../img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg"/>
+		</div>
+		<div>
+			<font style="background-color: antiquewhite; width: 100%; height: 100%;">上面是广告,从这儿开始是正式内容</font>
+		</div>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+	</body>
+</html>

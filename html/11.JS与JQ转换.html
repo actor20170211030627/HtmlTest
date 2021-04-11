@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>11.JS与JQ转换</title>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		
+		<style>
+			span {
+				color: red;
+				font-size: 50px;
+			}
+		</style>
+		
+		<script>
+			$(function(){
+				//3.JS的DOM操作,DOM对象无法操作JQ对象里的属性和方法
+				document.getElementById("btn_editspan_js").onclick = function() {
+					//1.JS的DOM操作
+					document.getElementById("span_banzhang").innerHTML = "萌萌哒!";
+				}
+
+				//4.JQ对象无法操作JS里的属性和方法!
+				$("#btn_editspan_jq").click(function() {
+					$("#span_banzhang").html("呵呵哒!");
+				});
+				
+				//5.JQ对象向DOM对象转换,方式一
+				$("#btn_editspan_jq2js1").click(function(){
+					$("#span_banzhang").get(0).innerHTML = "美美哒!";
+				});
+				
+				//5.JQ对象向DOM对象转换,方式二
+				$("#btn_editspan_jq2js2").click(function(){
+					$("#span_banzhang")[0].innerHTML = "棒棒哒!";
+				});
+				
+				//DOM对象向JQ对象转换
+				$("#btn_editspan_js2jq").click(function(){
+					var spanElement = document.getElementById("span_banzhang");
+					$(spanElement).html("思密达!");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>
+			<font color="red" size="7">1.JQuery修改&lt;span>里的值</font>(JQ对象无法操作JS里的属性和方法.)
+		</p>
+
+		&lt;script>
+		<br />&emsp;$(function() {
+			<br />&emsp;&emsp;document.getElementById("btn_editspan_js").<font color="red">onclick</font> = function(){
+				<br />&emsp;&emsp;&emsp;//1.JS的DOM操作
+				<br />&emsp;&emsp;&emsp;document.getElementById("span_banzhang").<font color="red">innerHTML</font>="萌萌哒!";
+			<br />&emsp;&emsp;}
+			<br />&emsp;});
+		<br /> &lt;/script>
+		<p><input type="button" value="JS修改span里的值" id="btn_editspan_js" /></p>
+
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+		
+		<p>班长:<span id="span_banzhang">你好帅!</span></p>
+
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+		
+		&lt;script>
+		<br />&emsp;$(function() {
+		<br />&emsp;&emsp;$("#btn_editspan_jq").<font color="red">click</font>(function(){
+		<br />&emsp;&emsp;&emsp;$("#span_banzhang").<font color="red">html</font>("呵呵哒!");
+		<br />&emsp;&emsp;});
+		<br />&emsp;});
+		<br /> &lt;/script>
+		<p><input type="button" value="JQ修改span里的值" id="btn_editspan_jq" /></p>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+		
+		&lt;script>
+		<br />&emsp;$(function() {
+		<br />&emsp;&emsp;$("#btn_editspan_jq2js1").<font color="red">click</font>(function(){
+		<br />&emsp;&emsp;&emsp;$("#span_banzhang").<font color="red">get(0).innerHtml</font> = "美美哒!";
+		<br />&emsp;&emsp;});
+		<br />&emsp;});
+		<br /> &lt;/script>
+		<p><input type="button" value="JQ对象向DOM对象转换,方式一" id="btn_editspan_jq2js1"/></p>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+		
+		&lt;script>
+		<br />&emsp;$(function() {
+		<br />&emsp;&emsp;$("#btn_editspan_jq2js2").<font color="red">click</font>(function(){
+		<br />&emsp;&emsp;&emsp;$("#span_banzhang")<font color="red">[0].innerHtml</font> = "棒棒哒!";
+		<br />&emsp;&emsp;});
+		<br />&emsp;});
+		<br /> &lt;/script>
+		<p><input type="button" value="JQ对象向DOM对象转换,方式二" id="btn_editspan_jq2js2"/></p>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+		
+		&lt;script>
+			<br />&emsp;$("#btn_editspan_js2jq").click(function(){
+			<br />&emsp;&emsp;var spanElement = document.getElementById("span_banzhang");
+			<br />&emsp;&emsp;$(<font color="red">spanElement</font>).<font color="red">html</font>("思密达!");
+			<br />&emsp;});
+		<br /> &lt;/script>
+		<p><input type="button" value="DOM对象向JQ对象转换" id="btn_editspan_js2jq"/></p>
+	</body>
+</html>

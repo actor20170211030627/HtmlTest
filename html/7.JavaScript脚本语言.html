@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>7.JavaScript脚本语言</title>
+
+		<style>
+			.fontRed {
+				color: red;
+			}
+		</style>
+		
+		<script>
+			function runEval(){
+				var str = "alert('abc')";
+				eval(str);
+			}
+		</script>
+	</head>
+
+	<body>
+		<p><font size="7" color="red">1. javascript 简介</font></p>
+		<ol>
+			<li>javascript是因特网上最流行的脚本语言(脚本语言是一种轻量级的编程语言).</li>
+			<li>javascript通常被直接嵌入HTML页面.</li>
+			<li>javascript是一种解释性语言(代码不进行预编译).</li>
+			<li>javascript被数百万计的网页用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用。</li>
+			<li>javascript被设计用来向 HTML 页面添加交互行为.</li>
+			<li>引入外部js:&lt;script type="text/javascript" src="../js/jquery-1.8.3.js" >&lt;/script></li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+		
+		<p><font size="7" color="red">2. javascript 的组成部分</font>离线手册搜索:pro_js_implement.asp</p>
+		<br />
+		<img src="../img/JavaScript组成.png"/>
+		<ol>
+			<li>
+				<font color="red">ECMAScript</font>:它是整个 javascript 的核心,包含(基本语法、变量、关键字、保留字、数据类型、语句、函数等等)
+			</li>
+			<li>
+				<font color="red">DOM</font>：文档对象模型，包含(整个 html 页面的内容)</li>
+			<li>
+				<font color="red">BOM</font>：浏览器对象模型,包含(整个浏览器相关内容)</li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------2-------------------------------------------------------->
+		
+		<font size="7" color="red">3. javascript 语法</font>
+		<ol>
+			<li>区分大小写</li>
+			<li>变量是弱类型的(String str=”aaa” ,var str=”123”;)</li>
+			<li>每行结尾的分号可有可无(建议大家写上)</li>
+			<li>注释与 java、php 等语言相同。</li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------2-------------------------------------------------------->
+		
+		<font size="7" color="red">4. javascript 注释</font>
+		<ol>
+			<li>单行注释以 // 开头</li>
+			<li>多行注释以 /* 开始，以 */ 结尾。</li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------3-------------------------------------------------------->
+		<p><font size="7" color="red">5. javascript 变量&amp;关键字&amp;保留字</font>离线手册搜索:pro_js_keywords.asp</p>
+		<ol>
+			<li>变量可以不用声明，变量是弱类型。统一使用 var 来定义！</li>
+			<li>定义变量的时候不要使用关键字和保留字。</li>
+			<li>ECMAScript 关键字:
+			<br />break
+			<br />case
+			<br />catch
+			<br />continue
+			<br />default
+			<br /><font class="fontRed">delete</font>
+			<br />do
+			<br />else
+			<br />finally
+			<br />for
+			<br /><font class="fontRed">function</font>
+			<br />if
+			<br /><font class="fontRed">in</font>
+			<br />instanceof
+			<br />new
+			<br />return
+			<br />switch
+			<br />this
+			<br />throw
+			<br />try
+			<br />typeof
+			<br />var
+			<br />void
+			<br />while
+			<br /><font class="fontRed">with</font>
+			</li>
+			<li><font class="fontRed">注意：</font>如果把关键字用作变量名或函数名，可能得到诸如 "Identifier Expected"（应该有标识符、期望标识符）这样的错误消息。</li>
+			<br />
+			<li>ECMAScript 保留字:(离线手册搜索:pro_js_reservedwords.asp)
+			<br />abstract
+			<br />boolean
+			<br />byte
+			<br />char
+			<br />class
+			<br />const
+			<br />debugger
+			<br />double
+			<br />enum
+			<br />export
+			<br />extends
+			<br />final
+			<br />float
+			<br />goto
+			<br />implements
+			<br />import
+			<br />int
+			<br />interface
+			<br />long
+			<br />native
+			<br />package
+			<br />private
+			<br />protected
+			<br />public
+			<br />short
+			<br />static
+			<br />super
+			<br />synchronized
+			<br />throws
+			<br />transient
+			<br />volatile
+			</li>
+			<li><font class="fontRed">注意：</font>如果将保留字用作变量名或函数名，那么除非将来的浏览器实现了该保留字，否则很可能收不到任何错误消息。当浏览器将其实现后，该单词将被看做关键字，如此将出现关键字错误。</li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------4-------------------------------------------------------->
+		<font size="7" color="red">6. javascript 数据类型</font>
+		<p>Javascript 数据类型分为<font class="fontRed">原始数据类型</font>和<font class="fontRed">引用数据类型</font></p>
+		<ol>
+			<li><font class="fontRed">原始数据类型：</font>离线手册搜索:pro_js_primitivetypes.asp</li>
+			<ol>
+				<li>string</li>
+				<li>number</li>
+				<li>boolean</li>
+				<li>null</li>
+				<li>undefined</li>
+			</ol>
+			<li><font class="fontRed">引用数据类型：</font></li>
+			<ol>
+				<li>Array(数组)&emsp;离线手册搜索:jsref_obj_array.asp</li>
+				<ol>
+					<li>var cars=new Array();
+						<br />cars[0]="Audi";
+						<br />cars[1]="BMW";
+						<br />cars[2]="Volvo";
+						<br />cars[100]="Test";&emsp;<font color="red">注意:这时候cars.length=101</font>
+					</li>
+					<li>var cars = new Array(size);&emsp;如果赋值的时候超过size,那么cars的长度=实际长度.如果赋值的时候没超过size,那么cars的长度=size</li>
+					<li>var cars=new Array("Audi","BMW","Volvo");</li>
+					<li>var cars=["Audi","BMW","Volvo"];</li>
+					<li>示例使用:<a href="7.11使用JS完成省市二级联动.html" target="_blank">7.11使用JS完成省市二级联动</a></li>
+					<li><font color="red">concat();</font>&emsp;(离线手册搜索:jsref_concat_array.asp)
+						<ol>
+							<li>连接两个或更多的数组，并返回被连接<font color="red">数组</font>的一个副本。</li>
+							<li>arr1.concat(arr2,arr3...);==>1,2,3,4...以逗号隔开.</li>
+						</ol>
+					</li>
+					<li><font color="red">join();</font>&emsp;(离线手册搜索:jsref_join.asp)
+						<ol>
+							<li>用于把数组中的所有元素放入一个<font color="red">字符串</font>。元素是通过指定的分隔符进行分隔的。</li>
+							<li>arr.join();&emsp;==>George,John,Thomas</li>
+							<li>arr.join(".");&emsp;==>George.John.Thomas</li>
+						</ol>
+					</li>
+				</ol>
+				<li>Boolean&emsp;离线手册搜索:jsref_obj_boolean.asp
+					<ol>
+						<li>new Boolean(value);	//构造函数&emsp; var boo = new Boolean(true);</li>
+						<li>Boolean(value);&emsp;&emsp;//转换函数</li>
+					</ol>
+				</li>
+				<li>Date&emsp;离线手册搜索:jsref_obj_date.asp
+					<ol>
+						<li>getTime();&emsp;返回 1970 年 1 月 1 日至今的毫秒数。(可用于解决浏览器缓存问题)
+							<br />&emsp;document.write(new Date().getTime());&emsp;==>1519802025884
+						</li>
+					</ol>
+				</li>
+				<li>Math&emsp;不需要new,直接Math.就可以,离线手册搜索:jsref_obj_math.asp
+					<br /><img src="../imgCustom/math1.png"/><img src="../imgCustom/math2.png"/>
+				</li>
+				<li>Number&emsp;离线手册搜索:jsref_obj_number.asp</li>
+				<li>String&emsp;离线手册搜索:jsref_obj_string.asp
+					<ol>
+						<li><font color="red">match();</font>找到一个或多个正则表达式的匹配。</li>
+						<li><font color="red">substr();</font>从起始索引号提取字符串中指定数目的字符。</li>
+						<li><font color="red">substring();</font>提取字符串中两个指定的索引号之间的字符。</li>
+					</ol>
+				</li>
+				<li>ReqExp&emsp;正则表达式,离线手册搜索:jsref_obj_regexp.asp
+					<ol>
+						<li>&lt;script type="text/javascript">
+							<br />&emsp;var str = "Visit W3School";
+							<br />&emsp;var patt1 = new RegExp("W3School");
+							<br />&emsp;var result = patt1.<font color="red">test</font>(str);
+							<br />&emsp;document.write("Result: " + result);
+							<br />&lt;/script>
+						</li>
+					</ol>
+				</li>
+				<li>Functions&emsp;全局函数/全局属性,离线手册搜索:jsref_obj_global.asp
+					<ol>
+						<li><img src="../imgCustom/functions1.png"/></li>
+						<li>encodeURI()和encodeURIComponent()区别:encodeURIComponent()会把很多标点符号都编码</li>
+						<li>var str =" alert('abc')";
+							<br />eval(str);&emsp;<input type="button" value="点我看结果" onclick="runEval()"/>
+						</li>
+						<li>parseInt("11",2);&emsp;//3(2+1),第二个参数:几进制,如果不写,默认10</li>
+					</ol>
+				</li>
+				<li>判断数据类型:
+					<br />var test=new Boolean();
+					<br />if (test.constructor==Boolean) {&emsp;//如果是boolean类型
+					<br />&emsp;document.write("This is a Boolean");
+					<br />}
+				</li>
+			</ol>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------5-------------------------------------------------------->
+		<font size="7" color="red">7. javascript 对象</font>
+		<ol>
+			<li>person=new Object();
+			<br />person.firstname="Bill";
+			<br />person.lastname="Gates";
+			<br />person.age=56;
+			<br />person.eyecolor="blue";</li>
+			<br />
+			<li>var person={firstname:"Bill", lastname:"Gates", id:5566};
+			<br />name=person.lastname;</li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------5-------------------------------------------------------->
+		<font size="7" color="red">8. javascript 运算符</font>
+		<p>其它运算符与 java 大体一致，需要注意其等性运算符。</p>
+		<ol>
+			<li>== 它在做比较的时候会进行自动转换。</li>
+			<li>=== 它在做比较的时候不会进行自动转换。</li>
+			<li>JavaScript里面没有equals。</li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------6-------------------------------------------------------->
+		<font size="7" color="red">9. javascript 获取元素内容</font>
+		<ol>
+			<li>获取元素:var element = document.getElementById(“id 名称”);
+				<ol>
+					<li><font class="fontRed">如果id是一个字符串,那么必须加上引号,如果是一个变量那么不需要。</font></li>
+					<li><font class="fontRed">★★注意:这个方法只能在函数内赋值,不能在函数外赋值,否则无效★★</font></li>
+				</ol>
+			</li>
+			<li>获取元素里面的值:document.getElementById(“id 名称”).value;</li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------7-------------------------------------------------------->
+		<font size="7" color="red">10. javascript 事件</font>
+		<ol>
+			<li><font class="fontRed">onsubmit</font>:表单提交事件
+			<br />示例:&lt;form onsubmit="return checkForm()"></li>
+		</ol>
+		
+		<hr size="1" />
+		<!--------------------------------------------------------8-------------------------------------------------------->
+		<font size="7" color="red">11. javascript 的输出</font>
+		<ol>
+			<li><font class="fontRed">alert();</font>:警告框</li>
+			<li><font class="fontRed">innerHTML(属性)</font>:向页面指定位置写入内容</li>
+			<li><font class="fontRed">document.write("&lt;p>My First JavaScript&lt;/p>");</font>:向页面写入内容</li>
+		</ol>
+	</body>
+
+</html>

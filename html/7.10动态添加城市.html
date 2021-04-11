@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>7.10动态添加城市</title>
+		<script>
+			window.onload = function(){
+				i = 0;
+				document.getElementById("btn").onclick = function(){
+					i ++;
+					var ulElement = document.getElementById("ul1");
+					var textNode = document.createTextNode("深圳" + i);	//创建文本节点
+					var liElement = document.createElement("li");		//创建元素节点<li></li>
+					liElement.appendChild(textNode);					//将文本节点添加到元素节点里面
+					ulElement.appendChild(liElement);					//将li节点添加到ul节点
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="添加城市" id="btn"/>
+		<ul id="ul1">
+			<li>北京</li>
+			<li>上海</li>
+			<li>广州</li>
+		</ul>
+		
+		<xmp>
+			<script>
+				window.onload = function(){
+					i = 0;
+					document.getElementById("btn").onclick = function(){
+						i ++;
+						var ulElement = document.getElementById("ul1");
+						var textNode = document.createTextNode("深圳" + i);	//创建文本节点
+						var liElement = document.createElement("li");		//创建元素节点<li></li>
+						liElement.appendChild(textNode);					//将文本节点添加到元素节点里面
+						ulElement.appendChild(liElement);					//将li节点添加到ul节点
+					}
+				}
+			</script>
+		</xmp>
+	</body>
+</html>

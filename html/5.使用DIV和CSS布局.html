@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5.使用DIV和CSS布局</title>
+
+		<link rel="stylesheet" href="../css/test.css" type="text/css" />
+
+		<!--1.元素选择器-->
+		<style>
+			div {
+				border: 1px solid red;
+				font-size: 30px;
+				margin-top: 2px;
+				color: green;
+			}
+		</style>
+
+		<!--2.类选择器-->
+		<style>
+			.div2 {
+				border: 2px solid green;
+				font-size: 40px;
+				margin-top: 2px;
+				color: blue;
+			}
+		</style>
+
+		<!--3.id选择器-->
+		<style>
+			#div3 {
+				border: 3px solid blue;
+				font-size: 50px;
+				margin-top: 2px;
+				color: gold;
+			}
+		</style>
+
+		<!--4.层级选择器-->
+		<style>
+			div p {
+				border: 4px solid gold;
+				font-size: 40px;
+				margin-top: 2px;
+				color: black;
+			}
+		</style>
+
+		<!--5-->
+		<style>
+			input[type='text'] {
+				background-color: red;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<font color="red" size="7">1. &lt;DIV></font>
+		<p>
+			Div 它是一个 html 标签，一个块级元素(单独显示一行)。它单独使用没有任何意义，必须结合 CSS 来使用。它主要用于页面的布局。
+		</p>
+
+		<div style="border: 1px solid red;">1.这是div的
+			<font color="red">元素选择器</font>(凡是是div且没有加class或id的都会是这个样式):
+			<br /> &lt;style>
+			<br />&emsp;div {
+			<br />&emsp;&emsp;border: 1px solid red;
+			<br />&emsp;&emsp;font-size: 30px;
+			<br />&emsp;&emsp;margin-top: 2px;
+			<br />&emsp;&emsp;color: green;
+			<br />&emsp;}
+			<br />&lt;/style>
+		</div>
+
+		<div class="div2">2.这是div的
+			<font color="red">类选择器</font>(class),多个div样式相同的时候用class:
+			<br />&lt;style class="div2">
+			<br />&emsp;.div2 {
+			<br />&emsp;&emsp;border: 2px solid green;
+			<br />&emsp;&emsp;font-size: 40px;
+			<br />&emsp;&emsp;margin-top: 2px;
+			<br />&emsp;&emsp;color: blue;
+			<br />&emsp;}
+			<br />&lt;/style>
+		</div>
+
+		<div id="div3">3.这是div的
+			<font color="red">id选择器</font>,单个div的时候用id:
+			<br />&lt;style id="div3">
+			<br />&emsp;#div3 {
+			<br />&emsp;&emsp;border: 3px solid blue;
+			<br />&emsp;&emsp;font-size: 50px;
+			<br />&emsp;&emsp;margin-top: 2px;
+			<br />&emsp;&emsp;color: gold;
+			<br />&emsp;}
+			<br />&lt;/style>
+		</div>
+
+		<div>
+			<p>4.这是div的
+				<font color="red">层级选择器</font>,多个层级的时候用,示例:
+				<br />&lt;style>
+				<br />&emsp;div p {
+				<br />&emsp;&emsp;border: 4px solid gold;
+				<br />&emsp;&emsp;font-size: 40px;
+				<br />&emsp;&emsp;margin-top: 2px;
+				<br />&emsp;&emsp;color: black;
+				<br />&emsp;}
+				<br />&lt;style>
+			</p>
+		</div>
+
+		<div>5.
+			<font color="red">属性选择器</font>,示例给input设置背景颜色
+			<br />&lt;style>
+			<br />&emsp;input[type='text'] {
+			<br />&emsp;&emsp;background-color: red;
+			<br />&emsp;}
+			<br />&lt;/style>
+			<br />
+			<br /> 用户名: <input type="text" name="username" />
+			<br /> 密码: <input type="password" name="password" />
+			<br />
+		</div>
+
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+
+		<font color="red" size="7">2. &lt;SPAN></font>
+		<p>
+			Span 它是一个 html 标签，一个内联元素(不单独显示一行)。它单独使用没有任何意义，必须结合 CSS 来使用。它主要用于对括起来的内容进行样式的修饰。
+		</p>
+
+		<hr size="1" />
+		<!--------------------------------------------------------2-------------------------------------------------------->
+
+		<font color="red" size="7">3. &lt;CSS></font>
+		<p>
+			<ul>
+				<li>Css 指层叠样式表(
+					<font color="red">C</font>ascading
+					<font color="red">S</font>tyle
+					<font color="red">S</font>heets)</li>
+				<li>样式定义
+					<font color="red">如何显示</font> HTML元素</li>
+				<li>样式通常存储在
+					<font color="red">样式表</font> 中</li>
+				<li>把样式添加到 HTML 4.0 中,是为了
+					<font color="red">解决内容与表现分离的问题</font>
+				</li>
+				<li>
+					<font color="red">外部样式表</font>可以极大提高工作效率</li>
+				<li>外部样式表通常存储在
+					<font color="red">CSS文件</font> 中</li>
+				<li>多个样式定义可
+					<font color="red">层叠为一</font>
+				</li>
+			</ul>
+		</p>
+
+		<font color="red">2.1 &lt;CSS>的作用</font>
+		<ol>
+			<li>HTML 它是整个网站的骨架.</li>
+			<li>CSS 它是对整个网站骨架的内容进行美化(修饰)</li>
+		</ol>
+
+		<font color="red">2.2 &lt;CSS>的 引入方式</font>
+		<ol>
+			<li>内部引入: &lt;style>直接写在html的head里面</li>
+			<li>行内引入: 直接在标签里写style="..."</li>
+			<li>外部引入: 在head里面&lt;
+				<font color="red">link rel="stylesheet" href="../css/test.css" type="text/css"/></font> 这儿的type="text/css"是默认属性,可以不写</li>
+				test.css里的内容示例:
+				<br />div {
+				<br />&emsp;border: 1px solid red;
+				<br />&emsp;font-size: 30px;
+				<br />&emsp;margin-top: 2px;
+				<br />&emsp;color: green;
+				<br />}
+		</ol>
+	</body>
+
+</html>

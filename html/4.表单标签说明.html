@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>4.表单标签说明</title>
+	</head>
+
+	<body>
+		<p>
+			<font color="red" size="7">1. &lt;form></font>
+			<font size="7">表单标签</font>
+		</p>
+		<p>所有需要提交到服务器的表单项,必须使用&lt;form>&lt;/form>括起来.</p>
+		<p>&lt;form> 的属性
+			<font color="red">name</font>="表单名称" (用于区分表单)</p>
+		<p>&lt;form> 的属性
+			<font color="red">action</font>="提交位置" (可以是页面/java后台)</p>
+		<p>&lt;form> 的属性
+			<font color="red">method</font>="提交方式" (7种)</p>
+		<ol>
+			<li>get:</li>
+			<li>post:</li>
+			<li>put:</li>
+			<li>delete:</li>
+		</ol>
+
+		<hr size="1" />
+		<!--------------------------------------------------------1-------------------------------------------------------->
+
+		<p>
+			<font color="red" size="7">2. &lt;input></font>
+			<font size="7">文本输入项</font>
+		</p>
+		<ol>
+			<li>&lt;input> 的属性
+				<font color="red">type</font>=""
+				<table border="1px" width="80%" cellspacing="0px" cellpadding="0px" bgcolor="pink">
+					<tr>
+						<td align="center">1</td>
+						<td align="center"><input type="button" value="这是普通按钮" /></td>
+						<td>button: 普通按钮</td>
+					</tr>
+					<tr>
+						<td align="center">2</td>
+						<td align="center"><input type="checkbox" checked="checked" /></td>
+						<td>checkbox: 多选按钮</td>
+					</tr>
+					<tr>
+						<td align="center">3</td>
+						<td align="center"><input type="color" /></td>
+						<td>color: 颜色</td>
+					</tr>
+					<tr>
+						<td align="center">4</td>
+						<td align="center"><input type="date" /></td>
+						<td>date: ----年/--月/--日</td>
+					</tr>
+					<tr>
+						<td align="center">5</td>
+						<td align="center"><input type="datetime" /></td>
+						<td>datetime: </td>
+					</tr>
+					<tr>
+						<td align="center">6</td>
+						<td align="center"><input type="datetime-local" /></td>
+						<td>datetime-local: ----年/--月/--日 --时:--分</td>
+					</tr>
+					<tr>
+						<td align="center">7</td>
+						<td align="center"><input type="email" /></td>
+						<td>email: 邮件</td>
+					</tr>
+					<tr>
+						<td align="center">8</td>
+						<td align="center"><input type="file" /></td>
+						<td>file: 文件</td>
+					</tr>
+					<tr>
+						<td align="center">9</td>
+						<td align="center"><input type="hidden" /></td>
+						<td>hidden: 隐藏字段,用户看不见,但是能提交到后台,例如:用户id</td>
+					</tr>
+					<tr>
+						<td align="center">10</td>
+						<td align="center"><input type="image" /></td>
+						<td>image: 图片,怎么不能选择?</td>
+					</tr>
+					<tr>
+						<td align="center">11</td>
+						<td align="center"><input type="month" /></td>
+						<td>month: ----年--月</td>
+					</tr>
+					<tr>
+						<td align="center">12</td>
+						<td align="center"><input type="number" /></td>
+						<td>number: 数字</td>
+					</tr>
+					<tr>
+						<td align="center">13</td>
+						<td align="center"><input type="password" /></td>
+						<td>password: 密码</td>
+					</tr>
+					<tr>
+						<td align="center">14</td>
+						<td align="center"><input type="radio" checked="checked" /></td>
+						<td>radio: 单选按钮</td>
+					</tr>
+					<tr>
+						<td align="center">15</td>
+						<td align="center"><input type="range" /></td>
+						<td>range: 范围,进度条SeekBar</td>
+					</tr>
+					<tr>
+						<td align="center">16</td>
+						<td align="center"><input type="reset" /></td>
+						<td>reset: 重置,重置同一个&lt;form>表单里的内容</td>
+					</tr>
+					<tr>
+						<td align="center">17</td>
+						<td align="center"><input type="search" /></td>
+						<td>search: 搜索,多了一个x,清空内容</td>
+					</tr>
+					<tr>
+						<td align="center">18</td>
+						<td align="center"><input type="submit" /></td>
+						<td>submit: 提交,提交本表单里的内容,如果是get,会把参数拼装到action的url后面,键=input的name属性,值=input的value</td>
+					</tr>
+					<tr>
+						<td align="center">19</td>
+						<td align="center"><input type="tel" /></td>
+						<td>tel: 电话</td>
+					</tr>
+					<tr>
+						<td align="center">20</td>
+						<td align="center"><input type="text" /></td>
+						<td>text: 文本</td>
+					</tr>
+					<tr>
+						<td align="center">21</td>
+						<td align="center"><input type="time" /></td>
+						<td>time: --时:--分</td>
+					</tr>
+					<tr>
+						<td align="center">22</td>
+						<td align="center"><input type="url" /></td>
+						<td>url: 地址</td>
+					</tr>
+					<tr>
+						<td align="center">23</td>
+						<td align="center"><input type="week" /></td>
+						<td>week: ---- 年第 -- 周</td>
+					</tr>
+				</table>
+
+				<br />
+
+				<li>&lt;input> 的属性
+					<font color="red">name</font>="用于分组" (当多个radio取同样的名字时,只能选择一个)</li>
+				<li>&lt;input> 的属性
+					<font color="red">value</font>="控件上显示的名称"</li>
+				<li>&lt;input> 的属性
+					<font color="red">required</font>="required" 必填</li>
+				<li>&lt;input> 的属性
+					<font color="red">size</font>="40px" 控件宽度</li>
+				<li>&lt;input> 的属性
+					<font color="red">maxlength</font>="18" 最大长度</li>
+				<li>&lt;input> 的属性
+					<font color="red">readonly</font>="readonly" 只读,不能输入</li>
+				<li>&lt;input> 的属性
+					<font color="red">placehoder</font>="规定帮助用户填写输入字段的提示"</li>
+				<li>&lt;input> 的属性
+					<font color="red">checked</font>="checked" (当type="radio/checkbox",可以用这个属性)</li>
+		</ol>
+
+		<hr size="1" />
+		<!--------------------------------------------------------2-------------------------------------------------------->
+
+		<p>
+			<font color="red" size="7">3. &lt;select></font>
+			<font size="7">下拉列表</font>
+		</p>
+		<ol>
+			<li>&lt;select> 的属性:
+				<ol>
+					<li><font color="red">name</font>=""</li>
+					<li><font color="red">value</font>="option的value的值"</li>
+					<li><font color="red">multiple="multiple"</font>&emsp;同时显示多个item</li>
+				</ol>
+			</li>
+		</ol>
+
+		<br />
+
+		<p>&lt;select> 里的标签:
+			<font color="red">&lt;option></font> 是select 的每一条</p>
+		<ol>
+			<li>&lt;option> 的属性:
+				<font color="red">value</font>="这条item的值,用于提交到服务器"</li>
+			<li>&lt;option> 的属性:
+				<font color="red">selected</font>="selected" 默认选中</li>
+			<li>&lt;option>&lt;/option> 里写每一条的值,示例:
+				<font color="red">&lt;option>重庆&lt;/option></font>
+			</li>
+		</ol>
+
+		<hr size="1" />
+		<!--------------------------------------------------------3-------------------------------------------------------->
+
+		<p>
+			<font color="red" size="7">4. &lt;textarea></font>
+			<font size="7">文本区域；多行文本输入区</font>
+		</p>
+		<ol>
+			<li>&lt;textarea的 <font color="red">rows</font>="5" 规定文本区内的可见行数。</li>
+			<li>&lt;textarea的 <font color="red">cols</font>="5" 规定文本区内的可见宽度。</li>
+		</ol>
+		<textarea>sdf</textarea>
+
+		<hr size="1" />
+		<!--------------------------------------------------------4-------------------------------------------------------->
+
+		<p>
+			<font color="red" size="7">5. 示例</font>
+		</p>
+
+		<form action="https://www.baidu.com" method="get">
+			用户名：<input type="text" name="text" placeholder="请输入用户名"/><br /> 密码：
+			<input type="password" /><br /> 确认密码：
+			<input type="password" /><br /> 性别：
+			<input type="radio" name="sex" value="0" />男
+			<input type="radio" name="sex" value="1" />女<br /> 爱好：
+			<input type="checkbox" name="hobby" value="DiaoYu" />钓鱼
+			<input type="checkbox" name="hobby" value="DaDianDong" />打电动
+			<input type="checkbox" name="hobby" value="XieDaiMa" />写代码<br /> 头像：
+			<input type="file" name="file" /><br /> 地址：
+			<select name="address">
+				<option value="">--请选择--</option>
+				<option value="BeiJing" selected="selected">北京</option>
+				<option value="ShangHai">上海</option>
+				<option value="GuangZhou">广州</option>
+			</select>
+			<br /> 自我介绍：<br />
+			<textarea value="TextArea">这是textArea</textarea><br /> 提交按钮：
+			<input type="submit" value="这是submit按钮" /><br /> 普通按钮：
+			<input type="button" value="这是button按钮" /><br /> 重置按钮：
+			<input type="reset" value="这是reset按钮" />
+		</form>
+		
+		<!--02_案例一：网站注册页面_表单标签属性介绍_.flv-->
+	</body>
+
+</html>

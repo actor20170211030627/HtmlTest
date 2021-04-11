@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>7.3使用JS完成页面定时弹出广告</title>
+		
+		<script>
+			function init(){
+//				showAdId = setInterval("showAd()",1000);//周期性操作
+				showAdId = setTimeout("showAd()",1000);//只操作一次,
+			}
+			
+			function showAd(){
+				document.getElementById("img").style.display="block";
+//				clearInterval(showAdId);
+				clearTimeout(showAdId);//清除Timeout
+//				hideAdId = setInterval("hideAd()",2000);
+				hideAdId = setTimeout("hideAd()",2000);//只操作一次,
+			}
+			
+			function hideAd(){
+				document.getElementById("img").style.display="none";
+//				clearInterval(hideAdId);
+				clearTimeout(hideAdId);//清除Timeout
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div>
+			<!--刚开始隐藏-->
+			<img width="100%" id="img" style="display: none;" src="../img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg"/>
+		</div>
+		<div><font style="background-color: antiquewhite; width: 100%; height: 100%;">上面是广告,从这儿开始是正式内容</font></div>
+	</body>
+</html>

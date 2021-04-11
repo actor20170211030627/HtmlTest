@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>13.JQ基本选择器</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		<script>
+			$(function(){
+				$("#btn1").click(function(){
+					$("#one").css("background-color","pink");
+				});
+				
+				$("#btn2").click(function(){
+					$(".mini").css("background-color","pink");
+				});
+				
+				$("#btn3").click(function(){
+					$("div").css("background-color","pink");
+				});
+				
+				$("#btn4").click(function(){
+					$("*").css("background-color","pink");
+				});
+				
+				$("#btn5").click(function(){
+					$("#two,.mini").css("background-color","pink");
+				});
+			});
+		</script>
+			
+	</head>
+	<body>
+		<input type="button" id="btn1" value="选择为one的元素($(&quot;#one&quot;))"/>
+		<input type="button" id="btn2" value="选择样式为mini的元素($(&quot;.mini&quot;))"/>
+		<input type="button" id="btn3" value="选择所有的div元素($(&quot;div&quot;))"/>
+		<input type="button" id="btn4" value="选择所有元素($(&quot;*&quot;))"/>
+		<input type="button" id="btn5" value="选择id为two或者样式为mini的元素($(&quot;#two,.mini&quot;))"/>
+		<hr/>
+		<div id="one">
+			<div class="mini">
+				111
+			</div>
+		</div>
+		
+		<div id="two">
+			<div class="mini">
+				222
+			</div>
+			<div class="mini">
+				333
+			</div>
+		</div>
+		
+		<div id="three">
+			<div class="mini">
+				444
+			</div>
+			<div class="mini">
+				555
+			</div>
+			<div class="mini">
+				666
+			</div>
+		</div>
+		
+		<span id="four">
+			
+		</span>
+		
+		<br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<font color="black" size="4px">
+			&lt;script>
+				<br />&emsp;$(function(){
+					<br />&emsp;&emsp;$("#btn1").click(function(){
+						<br />&emsp;&emsp;&emsp;<font color="red">$("#one").css("background-color","pink")</font>;
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;$("#btn2").click(function(){
+						<br />&emsp;&emsp;&emsp;<font color="red">$(".mini")</font>.css("background-color","pink");
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;$("#btn3").click(function(){
+						<br />&emsp;&emsp;&emsp;<font color="red">$("div")</font>.css("background-color","pink");
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;$("#btn4").click(function(){
+						<br />&emsp;&emsp;&emsp;<font color="red">$("*")</font>.css("background-color","pink");
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;$("#btn5").click(function(){
+						<br />&emsp;&emsp;&emsp;<font color="red">$("#two,.mini")</font>.css("background-color","pink");
+					<br />&emsp;&emsp;});
+				<br />&emsp;});
+			<br />&lt;/script>
+		</font>
+	</body>
+</html>

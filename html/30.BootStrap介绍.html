@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<!--声明文档兼容模式，表示使用IE浏览器的最新模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--设置视口的宽度(值为设备的理想宽度)，页面初始缩放值<理想宽度/可见宽度>-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		
+		<title>Bootstrap介绍</title>
+		
+		<!-- 引入Bootstrap核心样式文件 -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<!-- 引入jQuery核心js文件 -->
+		<script src="../js/jquery-1.11.0.min.js"></script>
+		<!-- 引入BootStrap核心js文件 -->
+		<script src="../js/bootstrap.min.js"></script>
+		
+		<style>
+			.container {
+				border: 1px solid red;
+				/*padding-left: 0px;
+				padding-right: 0px;*/
+			}
+			
+			.container-fluid {
+				border: 1px solid blue;
+			}
+			
+			font {
+				color: red;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<ol>
+			<li>
+				<a href="https://v3.bootcss.com/css/" target="_blank">全局 CSS 样式 · Bootstrap v3 中文文档</a>
+				<br /><br />
+				<div class="container">这是container(padding-left=padding-right=15px)</div>
+				<div class="container-fluid">这是container-fluid(padding-left=padding-right=15px)</div>
+				<div>这是普通div</div>
+			</li>
+			<li>
+				HTML 中的所有标题标签，<code>&lt;h1</code> 到<code>&lt;h6></code> 均可使用。另外，还提供了 <code>.h1</code> 到 <code>.h6</code> 类，为的是给内联（inline）属性的文本赋予标题的样式。
+				<h1>h1. Bootstrap heading</h1>
+				<h2>h2. Bootstrap heading</h2>
+				<h3>h3. Bootstrap heading</h3>
+				<h4>h4. Bootstrap heading</h4>
+				<h5>h5. Bootstrap heading</h5>
+				<h6>h6. Bootstrap heading</h6>
+			</li>
+			<li>
+				在标题内(不是必须在标题内)还可以包含 <code>&lt;small></code> 标签或赋予 <code>.small</code> 类的元素，可以用来标记副标题。其内的文本将被设置为父容器字体大小的 85%。
+				<h1>h1. Bootstrap heading <small>&lt;small>副标题&lt;/small></small></h1>
+				<h2>h2. Bootstrap heading <small>&lt;small>副标题&lt;/small></small></h2>
+				<h3>h3. Bootstrap heading <small>&lt;small>副标题&lt;/small></small></h3>
+				<h4>h4. Bootstrap heading <small>&lt;small>副标题&lt;/small></small></h4>
+				<h5>h5. Bootstrap heading <small>&lt;small>副标题&lt;/small></small></h5>
+				<h6>h6. Bootstrap heading <small>&lt;small>副标题&lt;/small></small></h6>
+			</li>
+			<li>这是&emsp;<mark>&lt;mark>高亮&lt;/mark></mark>&emsp;字体</li>
+			<li>这是&emsp;<del>&lt;del>被删除&lt;/del></del>&emsp;的字体</li>
+			<li>这是&emsp;<s>&lt;s>无用的&lt;/s></s>&emsp;文本</li>
+			<li>这是&emsp;<ins>&lt;ins>额外插入&lt;/ins></ins>&emsp;的文本</li>
+			<li>这是带&emsp;<u>&lt;u>下划线&lt;/u></u>&emsp;的文本</li>
+			<li>着重:通过增加 font-weight 值&emsp;&lt;strong><strong>强调一段文本。</strong>&lt;/strong></li>
+			<li>斜体:用斜体&emsp;&lt;em><em>强调一段文本。</em>&lt;/em></li>
+			<li><code>&lt;code>这是code显示&lt;/code></code></li>
+			<li><pre>&lt;pre>这是pre代码块显示&lt;/pre></pre></li>
+			
+			<hr/>
+			<!--------------------------------------------------------1-------------------------------------------------------->
+			
+			<li>
+				<font>无样式列表</font>:移除了默认的 list-style 样式和左侧外边距的一组元素（只针对直接子元素）。
+				<ul class="list-unstyled">
+					<li>&lt;ul class=<font>"list-unstyled"</font>></li>
+					<li>&emsp;&lt;li>...&lt;/li></li>
+					<li>&lt;/ul></li>
+					<br />
+					<li>Lorem ipsum dolor sit amet</li>
+					<li>Consectetur adipiscing elit</li>
+					<li>Integer molestie lorem at massa</li>
+					<li>Facilisis in pretium nisl aliquet</li>
+					<li>Nulla volutpat aliquam velit</li>
+				</ul>
+			</li>
+			<br />
+			<li>
+				<font>内联列表</font>:通过设置 display: inline-block; 并添加少量的内补（padding），将所有元素放置于同一行。
+				<ul class="list-unstyled">
+					<li>&lt;ul class=<font>"list-inline"</font>></li>
+					 <li>&emsp;&lt;li>...&lt;/li></li>
+					<li>&lt;/ul></li>
+				</ul>
+				<br />
+				<ul class="list-inline">
+					<li>注册</li>
+					<li>登录</li>
+					<li>退出</li>
+				</ul>
+			</li>
+			
+			<hr/>
+			<!--------------------------------------------------------1-------------------------------------------------------->
+			
+			<h1>表格</h1>
+			<li>
+				<ul class="list-unstyled">
+					<li><h2>基本实例</h2></li>
+					<li>为任意 <code>&lt;table></code> 标签添加 <code>.table</code> 类可以为其赋予基本的样式 — 少量的内补（padding）和水平方向的分隔线。这种方式看起来很多余！？但是我们觉得，表格元素使用的很广泛，如果我们为其赋予默认样式可能会影响例如日历和日期选择之类的插件，所以我们选择将此样式独立出来。</li>
+				</ul>
+				
+				<pre>
+&lt;table class="table">
+	&lt;thead>
+		&lt;tr>
+			&lt;th>&lt;/th>
+		&lt;/tr>
+	&lt;/thead>
+
+	&lt;tbody>
+		&lt;tr>
+			&lt;th>&lt;/th>
+			&lt;td>&lt;/td>
+		&lt;/tr>
+	&lt;/tbody>
+&lt;/table>
+				</pre>
+				
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th>2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th>3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+			
+			<li>
+				<ul class="list-unstyled">
+					<li><h2>条纹状表格</h2></li>
+					<li>通过 <code>.table-striped</code> 类可以给 <code>&lt;tbody></code> 之内的每一行增加斑马条纹样式。</li>
+					<li>跨浏览器兼容性</li>
+					<li>条纹状表格是依赖 :<code>nth-child</code> CSS 选择器实现的，而这一功能不被 Internet Explorer 8 支持。</li>
+				</ul>
+				
+				<pre>
+&lt;table class="table table-striped">
+  ...
+&lt;/table>
+				</pre>
+				
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th>2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th>3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+			
+			<li>
+				<ul class="list-unstyled">
+					<li><h2>带边框的表格</h2></li>
+					<li>添加 <code>.table-bordered</code> 类为表格和其中的每个单元格增加边框。</li>
+				</ul>
+				
+				<pre>
+&lt;table class="table table-bordered">
+  ...
+&lt;/table>
+				</pre>
+				
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th>2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th>3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+			
+			<li>
+				<ul class="list-unstyled">
+					<li><h2>鼠标悬停</h2></li>
+					<li>通过添加 <code>.table-hover</code> 类可以让 <code>&lt;tbody></code> 中的每一行对鼠标悬停状态作出响应。</li>
+				</ul>
+				
+				<pre>
+&lt;table class="table table-hover">
+  ...
+&lt;/table>
+				</pre>
+				
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th>2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th>3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+			
+			<li>
+				<ul class="list-unstyled">
+					<li><h2>紧缩表格</h2></li>
+					<li>通过添加 <code>.table-condensed</code> 类可以让表格更加紧凑，单元格中的内补（padding）均会减半。</li>
+				</ul>
+				
+				<pre>
+&lt;table class="table table-condensed">
+  ...
+&lt;/table>
+				</pre>
+				
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Username</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th>2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th>3</th>
+							<td>Larry</td>
+							<td>the Bird</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+			
+			<hr/>
+			<!--------------------------------------------------------1-------------------------------------------------------->
+		</ol>
+	</body>
+</html>

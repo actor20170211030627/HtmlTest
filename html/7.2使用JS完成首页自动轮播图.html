@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>7.2使用JS完成首页自动轮播图</title>
+
+		<style>
+			div {
+				border: 1px solid red;
+				width: 50%;
+				/*margin: auto;*/
+				text-align: center;
+			}
+		</style>
+		
+		<script>
+//			1.第一张图片的点击事件
+			var i = 1;
+			function changeImg() {
+				i++;
+				document.getElementById("img1").src = "../img/" + i + ".jpg";
+				if(i == 3) i = 0;
+			}
+			
+//			2.初始化(自动轮播)
+			var startId;
+			var isStarted = false;
+			function init(){
+				startId = window.setInterval("changeImg2()",1000);//window可以不写
+				isStarted = true;
+			}
+			
+//			3.切换图片的函数
+			var x = 1;
+			function changeImg2(){
+				x++;
+				document.getElementById("img2").src = "../img/" + x + ".jpg";
+				if(x == 3) x = 0;
+			}
+			
+//			4.再次开始自动轮播
+			function reStart(){
+				if(!isStarted){
+					init();
+				}
+			}
+			
+//			5.停止自动轮播
+			function stopImg(){
+				clearInterval(startId);//window可以不写
+				isStarted = false;
+			}
+		</script>
+	</head>
+
+	<body onload="init()">
+		<div>
+			<input type="button" value="下一张" onclick="changeImg()" />
+			<br />
+			<img id="img1" width="100%" src="../img/1.jpg" />
+		</div>
+		<div>
+			<input type="button" value="再次开始自动轮播,window.setInterval(&quot;changeImg2()&quot;,1000);//window可以不写" onclick="reStart()" />
+			<input type="button" value="停止自动轮播,clearInterval()参数必须是由 setInterval() 返回的 ID 值" onclick="stopImg()" />
+			<br />
+			<img id="img2" width="100%" src="../img/1.jpg" />
+		</div>
+	</body>
+
+</html>

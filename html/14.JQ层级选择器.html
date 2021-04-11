@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>14.JQ层级选择器</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js" ></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				
+				//在给定的祖先元素下匹配所有的后代元素(儿子,孙子...)
+				$("#btn1").click(function(){
+					$("body div").css("background-color","gold");//body内所有叫div的(儿子/孙子)...
+				});
+				
+				//在给定的父元素下匹配所有的子元素(儿子)
+				$("#btn2").click(function(){
+					$("body>div").css("background-color","gold");//body内所有的div(儿子)
+				});
+				
+				//匹配所有紧接在 prev 元素后的 next 元素(下一个同层级元素)
+				$("#btn3").click(function(){
+					$("#two+div").css("background-color","gold");//id为two的下一个同层级叫div的元素(同桌)
+				});
+				
+				//匹配 prev 元素之后的所有 siblings 元素(同一种元素的兄弟)
+				$("#btn4").click(function(){
+					$("#one~div").css("background-color","gold");//id为one的所有同层级叫div的元素(兄弟)
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" id="btn1" value="选择body中的所有的div元素($(&quot;body div&quot;))"/>
+		<input type="button" id="btn2" value="选择body中的第一级的孩子($(&quot;body>div&quot;))"/>
+		<input type="button" id="btn3" value="选择id为two的元素的下一个元素($(&quot;#two+div&quot;))"/>
+		<input type="button" id="btn4" value="选择id为one的所有的兄弟元素($(&quot;#one~div&quot;))"/>
+		
+		<hr/>
+		<div id="one">
+			<div class="mini">
+				111
+			</div>
+		</div>
+		
+		<div id="two">
+			<div class="mini">
+				222
+			</div>
+			<div class="mini">
+				333
+			</div>
+		</div>
+		
+		<div id="three">
+			<div class="mini">
+				444
+			</div>
+			<div class="mini">
+				555
+			</div>
+			<div class="mini">
+				666
+			</div>
+		</div>
+		
+		<span id="four">
+			
+		</span>
+		
+		<br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<font color="black" size="4px">
+			&lt;script type="text/javascript">
+				<br />&emsp;$(function(){
+					<br />
+					<br />&emsp;&emsp;//在给定的祖先元素下匹配所有的后代元素(儿子,孙子...)
+					<br />&emsp;&emsp;$("#btn1").click(function(){
+						<br />&emsp;&emsp;&emsp;$("<font color="red">body div</font>").css("background-color","gold");//body内所有叫div的(<font color="red">儿子/孙子</font>)...
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;//在给定的父元素下匹配所有的子元素(儿子)
+					<br />&emsp;&emsp;$("#btn2").click(function(){
+						<br />&emsp;&emsp;&emsp;$("<font color="red">body>div</font>").css("background-color","gold");//body内所有的div(<font color="red">儿子</font>)
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;//匹配所有紧接在 prev 元素后的 next 元素(下一个同层级元素)
+					<br />&emsp;&emsp;$("#btn3").click(function(){
+						<br />&emsp;&emsp;&emsp;$("<font color="red">#two+div</font>").css("background-color","gold");//id为two的<font color="red">下一个</font>同层级叫div的元素(<font color="red">同桌</font>)
+					<br />&emsp;&emsp;});
+					<br />
+					<br />&emsp;&emsp;//匹配 prev 元素之后的所有 siblings 元素(同一种元素的兄弟)
+					<br />&emsp;&emsp;$("#btn4").click(function(){
+						<br />&emsp;&emsp;&emsp;$("<font color="red">#one~div</font>").css("background-color","gold");//id为one的所有同层级叫div的元素(<font color="red">兄弟</font>)
+					<br />&emsp;&emsp;});
+				<br />&emsp;});
+			<br />&lt;/script>
+		</font>
+	</body>
+</html>

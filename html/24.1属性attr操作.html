@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>属性操作_attr</title>
+		<!--/**
+			 * 需求：
+			 * 	1.获取图片的路径
+			 * 	2.设置图片的高度属性
+			 *  3.给图片设置多个属性(宽度和高度)
+			 *  4.移出图片的高度属性
+			 */
+			
+			/**
+			 * 方法分析：
+			 * 	1.attr(name):读(获)取属性的值
+			 *  2.attr(key,value)：设置属性值
+			 *  3.attr(properties)：同时设置多个属性
+			 *  4.removeAttr(name)：删除某个属性
+			 * 
+			 * 所有方法注意查看运行显示结果，查看其中的某个方法时，请注释其它方法，后面的案例不再说明！
+			 */-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<script>
+			$(function(){
+				$("#btn1").click(function(){
+					var srcEle = $("img").attr("src");//1.attr(name):该方法用于获取属性的值(根据属性的名称)
+					alert(srcEle);		//../img/1.jpg
+				});
+				
+				$("#btn2").click(function(){
+					$("img").attr("height","500px");//2.attr(key,value):该方法用于设置属性和值
+				});
+				
+				$("#btn3").click(function(){
+					$("img").attr({"width":"900px","height":"400px"});//3.attr(properties)：同时设置多个属性值
+				});
+				
+				$("#btn4").click(function(){
+					$("img").removeAttr("width");//4.removeAttr(name)：删除某个属性和值
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<img src="../img/1.jpg"  width="600px" />
+		<div>
+			<input type="button" value="获取图片路径" id="btn1"/>
+			<input type="button" value="设置图片高=500px" id="btn2"/>
+			<input type="button" value="设置图片宽=900px,高=400px" id="btn3"/>
+			<input type="button" value="清除图片宽度属性" id="btn4"/>
+		</div>
+	</body>
+	
+	<xmp>
+		<head>
+			<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+			<script>
+				$(function(){
+					$("#btn1").click(function(){
+						var srcEle = $("img").attr("src");//1.attr(name):该方法用于获取属性的值(根据属性的名称)
+						alert(srcEle);		//../img/1.jpg
+					});
+					
+					$("#btn2").click(function(){
+						$("img").attr("height","500px");//2.attr(key,value):该方法用于设置属性和值
+					});
+					
+					$("#btn3").click(function(){
+						$("img").attr({"width":"900px","height":"400px"});//3.attr(properties)：同时设置多个属性值
+					});
+					
+					$("#btn4").click(function(){
+						$("img").removeAttr("width");//4.removeAttr(name)：删除某个属性和值
+					});
+				});
+			</script>
+		</head>
+		
+		<body>
+			<img src="../img/1.jpg"  width="600px" />
+			<div>
+				<input type="button" value="获取图片路径" id="btn1"/>
+				<input type="button" value="设置图片高=500px" id="btn2"/>
+				<input type="button" value="设置图片宽=900px,高=400px" id="btn3"/>
+				<input type="button" value="清除图片宽度属性" id="btn4"/>
+			</div>
+		</body>
+	</xmp>
+</html>

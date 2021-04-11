@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>7.7表格高亮显示</title>
+		<script>
+			function setBackgroundColor(id, mouseFlag){
+				if(mouseFlag){
+					document.getElementById(id).style.backgroundColor="red";
+				} else {
+					document.getElementById(id).style.backgroundColor="white";
+				}
+			}
+		</script>
+
+	</head>
+	<body>
+		<table border="1" width="500" height="50" align="center" id="tbl">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr onmouseover="setBackgroundColor('tr1',true)" onmouseout="setBackgroundColor('tr1',false)" id="tr1">
+					<td>1</td>
+					<td>张三</td>
+					<td>22</td>
+				</tr>
+				<tr onmouseover="setBackgroundColor('tr2',true)" onmouseout="setBackgroundColor('tr2',false)" id="tr2">
+					<td>2</td>
+					<td>李四</td>
+					<td>25</td>
+				</tr>
+				<tr onmouseover="setBackgroundColor('tr3',true)" onmouseout="setBackgroundColor('tr3',false)" id="tr3">
+					<td>3</td>
+					<td>王五</td>
+					<td>27</td>
+				</tr>
+				<tr onmouseover="setBackgroundColor('tr4',true)" onmouseout="setBackgroundColor('tr4',false)" id="tr4">
+					<td>4</td>
+					<td>赵六</td>
+					<td>29</td>
+				</tr>
+				<tr onmouseover="setBackgroundColor('tr5',true)" onmouseout="setBackgroundColor('tr5',false)" id="tr5">
+					<td>5</td>
+					<td>田七</td>
+					<td>30</td>
+				</tr>
+				<tr onmouseover="setBackgroundColor('tr6',true)" onmouseout="setBackgroundColor('tr6',false)" id="tr6">
+					<td>6</td>
+					<td>汾九</td>
+					<td>20</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
